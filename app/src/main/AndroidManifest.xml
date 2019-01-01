@@ -3,9 +3,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.lanyu96.querylogistics">
 
+    <!-- 蓝牙相关 -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+    <uses-feature
+        android:name="android.hardware.bluetooth_le"
+        android:required="true" />
+
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 多渠道打包 -->
+    <meta-data
+        android:name="UMENG_CHANNEL"
+        android:value="${UMENG_CHANNEL_VALUE}" />
 
     <application
         android:allowBackup="true"
@@ -13,34 +25,28 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        tools:replace="android:icon"
-        android:theme="@style/Base.Theme.AppCompat.Light.DarkActionBar">
+        android:theme="@style/Base.Theme.AppCompat.Light.DarkActionBar"
+        tools:replace="android:icon">
         <activity android:name=".MainActivity" />
-        <activity android:name=".ui.QueryActivtiy"></activity>
-        <activity android:name=".TestActivity" >
-
-
-        </activity>
-
+        <activity android:name=".ui.QueryActivtiy" />
+        <activity android:name=".TestActivity"></activity>
         <activity
             android:name=".ui.HomeActivity"
-            android:windowSoftInputMode="adjustPan">
-
-        </activity>
-        <activity android:name=".ui.WelcomeActivity"
-            android:theme="@style/AppThemeFullScreen"
-            >
-
+            android:windowSoftInputMode="adjustPan"></activity>
+        <activity
+            android:name=".ui.WelcomeActivity"
+            android:theme="@style/AppThemeFullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.BLEConnectActivity"
+            android:theme="@style/AppThemeNoTitle"
+            >
+
+        </activity>
     </application>
-    <!--多渠道打包        -->
-    <meta-data
-        android:name="UMENG_CHANNEL"
-        android:value="${UMENG_CHANNEL_VALUE}" />
 
 </manifest>
