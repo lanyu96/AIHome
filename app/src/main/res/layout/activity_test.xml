@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".TestActivity">
+
+
+
+      <!--<github.ishaan.buttonprogressbar.ButtonProgressBar-->
+        <!--android:id="@+id/test_btn_progressBar"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--app:text="点击获取"-->
+        <!--app:textColor="#fff"-->
+        <!--app:type="indeterminate"-->
+
+        <!--/>-->
+
+    <!--<cn.jeesoft.widget.pickerview.CharacterPickerView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--app:barrierAllowsGoneWidgets="true"-->
+        <!--app:barrierDirection="bottom"-->
+        <!--android:layout_height="wrap_content">-->
+
+
+
+    <!--</cn.jeesoft.widget.pickerview.CharacterPickerView>-->
+
+    <Button
+        android:id="@+id/test111111111"
+        android:onClick="test111"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="test"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="test1"
+        />
+
+
+</LinearLayout>

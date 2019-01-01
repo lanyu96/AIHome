@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <FrameLayout
+        android:id="@+id/act_all_fragment_fl"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        >
+    </FrameLayout>
+    <!--分割线-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="#dddddd"
+        android:layout_height="1dp">
+    </LinearLayout>
+    <devlight.io.library.ntb.NavigationTabBar
+        android:id="@+id/ntb_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        app:ntb_bg_color="#fff"
+        app:ntb_icon_size_fraction="0.5"
+        app:ntb_active_color="#25dbe7"
+        app:ntb_inactive_color="#8e8e8e"
+        app:ntb_animation_duration="0"
+        app:ntb_badged="false"
+        app:ntb_scaled="true"
+        app:ntb_tinted="true"
+        app:ntb_title_mode="all"
+        app:ntb_badge_bg_color="#fff"
+        app:ntb_titled="true"
+        app:ntb_swiped="false"/>
+
+
+</LinearLayout>

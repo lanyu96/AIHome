@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:background="@drawable/bg1"
+    tools:context=".ui.QueryActivtiy">
+
+
+    <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="@string/remarks"-->
+
+        <!--/>-->
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp"
+        >
+
+        <!--<org.angmarch.views.NiceSpinner-->
+
+            <!--android:id="@+id/act_query_company_nicespinner"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content" />-->
+
+        <Button
+            android:id="@+id/act_query_company_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="#007adcd5"
+            android:text="请选择快递"
+            />
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:focusableInTouchMode="true"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/act_query_yundanhao_et"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="请输入快递单号" />
+        </android.support.design.widget.TextInputLayout>
+
+    </LinearLayout>
+
+
+
+
+    <!--<android.support.design.widget.TextInputLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:paddingTop="20dp"-->
+    <!--&gt;-->
+    <!--<EditText-->
+    <!--android:id="@+id/act_query_wuliugongsi_et"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:hint="请输入物流公司的编码"-->
+    <!--/>-->
+    <!--</android.support.design.widget.TextInputLayout>-->
+
+
+
+    <!--<Button-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:onClick="queryInfo"-->
+        <!--android:text="点击查询详细物流信息" />-->
+
+    <github.ishaan.buttonprogressbar.ButtonProgressBar
+        android:onClick="queryInfo"
+        android:id="@+id/act_query_btn_progressBar"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="gravity"
+        android:textDirection="firstStrong"
+        app:text="点击查询详细物流信息"
+        app:textColor="#87020303"
+        app:type="indeterminate"
+        app:bgColor="#8dd9e0f4"
+        app:progColor="#88b2edf1"
+
+        />
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/act_query_company_tv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="15sp"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/act_query_danhao_tv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:textSize="15sp"
+            android:gravity="center" />
+
+    </LinearLayout>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/act_query_dateInfo_rv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="4dp"
+        android:scrollbars="vertical">
+
+
+    </android.support.v7.widget.RecyclerView>
+
+
+    <!--<ScrollView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="0dp"-->
+    <!--android:layout_marginTop="15dp"-->
+    <!--android:layout_weight="1"-->
+    <!--&gt;-->
+    <!--<TextView-->
+    <!--android:id="@+id/act_query_info_tv"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+
+    <!--/>-->
+    <!--</ScrollView>-->
+
+
+</LinearLayout>

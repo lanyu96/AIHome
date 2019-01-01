@@ -1,0 +1,92 @@
+apply plugin: 'com.android.application'
+
+android {
+
+
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.lanyu96.querylogistics"
+        minSdkVersion 22
+        targetSdkVersion 28
+        //解决报错 All flavors must now belong to a named .....
+        flavorDimensions "versionCode"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        versionCode 3
+        versionName '2.4'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//            signingConfig signingConfigs.lanyu96
+//            versionNameSuffix '2.6'
+        }
+    }
+
+    allprojects {
+        repositories {
+            google()
+            maven { url "https://jitpack.io" }
+//        jcenter()
+//        maven { url "https://jitpack.io" }
+        }
+    }
+    //多渠道打包方式 3 (优化2 , 在生成的包后添加当前版本信息)
+    productFlavors {
+        wandoujia {
+        }
+        xiaomi {
+        }
+        huawei {
+        }
+        productFlavors.all {
+            flavor ->
+                flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
+        }
+        applicationVariants.all { variant ->
+            variant.outputs.all { output ->
+                def fileName
+                if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                    fileName = outputFile.name.replace(".apk", "-${defaultConfig.versionName}.apk")
+                    outputFileName = fileName
+                }
+            }
+        }
+    }
+}
+
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    //noinspection GradleCompatible
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.squareup.okhttp3:okhttp:3.12.0'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    //    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.github.arcadefire:nice-spinner:1.3.6'
+    implementation 'com.github.dmytrodanylyk.android-process-button:library:1.0.4'
+    implementation 'com.android.support:support-v4:28.0.0'
+    implementation 'com.github.dmytrodanylyk:android-morphing-button:98a4986e56'
+    implementation 'com.github.ishaan1995:ButtonProgressBar:1.0'
+    // 可实现单项选择，并支持一二三级联动效果 高仿iOS的滚轮效果
+    //    implementation 'com.github.imkarl:CharacterPickerView:v0.2.7'
+    //实现类似于 ios风格的滚动选择控件
+    implementation 'com.weigan:loopView:0.1.2'
+    //    implementation 'com.android.support:appcompat-v7:28.0.0'
+    //fragment
+    implementation 'devlight.io:navigationtabbar:1.2.5'
+    //加载布局管理器
+    implementation 'com.lai.weavey:loadinglayout:1.3.1'
+    //Toasty
+    implementation 'com.github.GrenderG:Toasty:1.3.1'
+    //sweet alert dialog
+    //    implementation 'com.github.f0ris.sweetalert:library:1.5.1'
+    implementation 'com.github.f0ris.sweetalert:library:1.5.6'
+}

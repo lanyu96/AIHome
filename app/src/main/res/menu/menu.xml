@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/search"
+        android:icon="@drawable/icon_search"
+        android:title="search"
+        app:showAsAction="always"
+        app:actionViewClass="android.support.v7.widget.SearchView"
+        />
+    <!--showAsAction 下的选项 always : 总是显示在ActionBar上-->
+    <!--ifRoom : 当Action有可用空间时就显示在ActionBar上-->
+    <!--没有足够空间,就显示在溢出菜单中-->
+    <!--never  : 表示菜单项永远都不显示在ActionBar上-->
+    <!--withText: 将菜单项显示在ActionBar上,并且显示文本,-->
+    <!--受到ActionBar空间的显示,文本可能显示不全-->
+
+    <item
+        android:id="@+id/setting"
+        android:title="设置"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/about"
+        android:title="关于"
+        app:showAsAction="never" />
+</menu>

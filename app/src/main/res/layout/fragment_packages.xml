@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fafafa"
+
+    android:orientation="vertical">
+
+
+    <!--<TextView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="@string/remarks"-->
+
+    <!--/>-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <!--<org.angmarch.views.NiceSpinner-->
+
+        <!--android:id="@+id/act_query_company_nicespinner"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content" />-->
+
+        <Button
+            android:id="@+id/act_query_company_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="#007adcd5"
+            android:text="请选择快递" />
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusableInTouchMode="true">
+
+            <EditText
+                android:id="@+id/act_query_yundanhao_et"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="请输入快递单号" />
+        </android.support.design.widget.TextInputLayout>
+
+    </LinearLayout>
+
+
+    <!--<android.support.design.widget.TextInputLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:paddingTop="20dp"-->
+    <!--&gt;-->
+    <!--<EditText-->
+    <!--android:id="@+id/act_query_wuliugongsi_et"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:hint="请输入物流公司的编码"-->
+    <!--/>-->
+    <!--</android.support.design.widget.TextInputLayout>-->
+
+
+    <!--<Button-->
+        <!--android:id="@+id/fragment_onClick_query_btn"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:background="#88b2edf1"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginLeft="15dp"-->
+        <!--android:layout_marginRight="15dp"-->
+        <!--android:text="点击查看详细物流信息" />-->
+
+    <com.dd.processbutton.iml.ActionProcessButton
+        android:id="@+id/fragment_onClick_query_action_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:text="Sign_in"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:pb_colorComplete="@color/green_complete"
+        app:pb_colorNormal="@color/blue_normal"
+        app:pb_colorPressed="@color/blue_pressed"
+        app:pb_colorProgress="@color/purple_progress"
+        app:pb_textComplete="查询完成"
+        app:pb_textProgress="正在查询"
+        app:pb_textError="Error"
+        app:pb_colorError="@color/red_error" />
+
+
+
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/fragment_query_bg_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/query_bg"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    <!--状态加载布局-->
+    <com.weavey.loading.lib.LoadingLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/act_loading_ll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:isFirstVisible="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/act_query_company_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/act_query_danhao_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/act_query_dateInfo_rv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="4dp"
+                android:scrollbars="vertical">
+
+
+            </android.support.v7.widget.RecyclerView>
+
+        </LinearLayout>
+
+    </com.weavey.loading.lib.LoadingLayout>
+    </android.support.constraint.ConstraintLayout>
+    <!--<ScrollView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="0dp"-->
+    <!--android:layout_marginTop="15dp"-->
+    <!--android:layout_weight="1"-->
+    <!--&gt;-->
+    <!--<TextView-->
+    <!--android:id="@+id/act_query_info_tv"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+
+    <!--/>-->
+    <!--</ScrollView>-->
+
+
+</LinearLayout>
