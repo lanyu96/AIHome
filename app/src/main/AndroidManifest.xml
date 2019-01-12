@@ -11,6 +11,8 @@
         android:name="android.hardware.bluetooth_le"
         android:required="true" />
 
+
+
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
@@ -29,10 +31,10 @@
         tools:replace="android:icon">
         <activity android:name=".MainActivity" />
         <activity android:name=".ui.QueryActivtiy" />
-        <activity android:name=".TestActivity"></activity>
+        <activity android:name=".TestActivity" />
         <activity
             android:name=".ui.HomeActivity"
-            android:windowSoftInputMode="adjustPan"></activity>
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".ui.WelcomeActivity"
             android:theme="@style/AppThemeFullScreen">
@@ -42,11 +44,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.BLEConnectActivity"
-            android:theme="@style/AppThemeNoTitle"
-            >
-
-        </activity>
+        <activity
+            android:name=".ui.BLEConnectActivity"
+            android:theme="@style/AppThemeNoTitle"></activity>
+        <activity android:name=".ui.BLEShowActivity"></activity>
+        <service android:name="com.lanyu96.querylogistics.service.BluetoothLeService" android:enabled="true"></service>
     </application>
 
 </manifest>
